@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+button, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+button, input {
+  border: none;
+  background: none;
+}
+button {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+

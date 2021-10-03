@@ -1,0 +1,40 @@
+.d-flex {
+  display: flex;
+}
+
+.j-end {
+  justify-content: flex-end;
+}
+
+.j-start {
+  justify-content: flex-start;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.ai-end {
+  align-items: flex-end;
+}
+
+.ai-stretch {
+  align-items: stretch;
+}
+
+.centred {
+  margin-left: auto;
+  margin-right: auto;
+}

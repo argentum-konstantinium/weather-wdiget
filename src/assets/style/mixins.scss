@@ -1,0 +1,13 @@
+@mixin centredFlex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin roundedBtnHover {
+  &:hover {
+    transform: scale(1.15) rotate(180deg);
+  }
+}
+
+
