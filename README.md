@@ -14,6 +14,15 @@ npm run serve
 ```
 npm run build
 ```
+### Compile and minifies webcomponent for production with --inline-vue flag
+```
+npm run build-wc-with-vue
+```
+
+### Compile and minifies webcomponent for production without --inline-vue flag
+```
+npm run build-wc-without-vue
+```
 
 ### Lints and fixes files
 ```

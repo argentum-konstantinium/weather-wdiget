@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-wc-with-vue": "vue-cli-service build --target wc --inline-vue --name weather-widget ./src/App.vue",
+    "build-wc-without-vue": "vue-cli-service build --target wc --name weather-widget ./src/App.vue"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.12.4",
