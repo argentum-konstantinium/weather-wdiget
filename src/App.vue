@@ -5,11 +5,13 @@
 </template>
 
 <script>
+
+import store from './store/index';
 import Widget from '@/components/Widget.vue';
-import 'buefy/dist/buefy.css';
 
 export default {
   name: 'App',
+  store,
   components: {
     Widget,
   },
@@ -17,5 +19,5 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import "@/assets/style/index.scss";
 </style>
