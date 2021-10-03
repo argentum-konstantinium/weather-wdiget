@@ -1,0 +1,21 @@
+.switch-content {
+  &-enter-active, &-leave-active {
+    opacity: 0;
+    transition: .3s linear;
+    transform: scale(0.25);
+  }
+  &-enter-to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.add-in-list {
+  &-enter-active, &-leave-active  {
+    opacity: 0;
+    transition: .3s linear;
+  }
+  &-enter-to {
+    opacity: 1;
+  }
+}
