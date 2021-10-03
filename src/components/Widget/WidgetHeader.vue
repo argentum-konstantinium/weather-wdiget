@@ -1,36 +1,54 @@
 <template>
   <div class="widget-header">
-    <b-button class="widget-header__button" size="is-small" type="is-primary is-light"
-              aria-label="settings" rounded>
-      <b-icon type="is-primary" aria-hidden="true" pack="mdi" icon="cog-outline"/>
-    </b-button>
+    <BasicButton shadow @click="settingsState = true" rounded centred class="widget-header__btn"
+                 aria-label="settings">
+      <Icon class="widget-header__btn-icon" :path="icons.mdiCogOutline"/>
+    </BasicButton>
   </div>
 </template>
 
 <script>
-import { BButton } from 'buefy/dist/components/button';
-import { BIcon } from 'buefy/dist/components/icon';
+import { mdiCogOutline } from '@mdi/js';
+import BasicButton from '@/components/basic/BasicButton.vue';
+import Icon from '@/components/basic/BasicIcon.vue';
+import widgetMixin from '@/mixins/widget';
 
 export default {
   name: 'WidgetHeader',
+  mixins: [widgetMixin],
   components: {
-    BButton,
-    BIcon,
+    BasicButton,
+    Icon,
+  },
+  data() {
+    return {
+      icons: {
+        mdiCogOutline,
+      },
+    };
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import '@/assets/style/variables';
+@import '@/assets/style/mixins';
 .widget-header {
-  &__button {
-    display: block;
+  &__btn {
     margin-left: auto;
-    padding-left: 1em !important;
-    padding-right: 1em !important;
+    padding: 5px;
     transition: transform .2s linear;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
-    &:hover {
-      transform: scale(1.15) rotate(180deg);
+    &-icon {
+      display: block;
+      width: 100%;
+      fill: $basicColor;
+      transition: .2s linear
+    }
+    @include roundedBtnHover;
+    &:not(:disabled):hover {
+      .widget-header__btn-icon {
+        fill: $basicBtnHoverFont;
+      }
     }
   }
 }
