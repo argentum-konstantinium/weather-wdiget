@@ -8,16 +8,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import WidgetHeader from '@/components/Widget/WidgetHeader.vue';
 import WidgetMetcasts from '@/components/Widget/WidgetMetcasts.vue';
 import WidgetSettings from '@/components/Widget/WidgetSettings.vue';
-import WidgetMixin from '@/mixins/widget';
-import api from '@/api/weatherApi';
-import locationsMixin from '@/mixins/locations';
-import metcastMixin from '@/mixins/metcasts';
+import WidgetMixin from '@/mixins/widget.ts';
+import api from '@/api/weatherApi.ts';
+import locationsMixin from '@/mixins/locations.ts';
+import metcastMixin from '@/mixins/metcasts.ts';
 
-export default {
+export default Vue.extend({
   name: 'Widget',
   mixins: [WidgetMixin, locationsMixin, metcastMixin],
   components: {
@@ -26,7 +27,7 @@ export default {
     WidgetSettings,
   },
   methods: {
-    async getMetcastsFromUserLocation() {
+    async getMetcastsFromUserLocation(): Promise<void> {
       const {
         country,
         city,
@@ -40,7 +41,7 @@ export default {
       this.updateLocalstorage();
       this.getMetcasts();
     },
-    async loadLocationsList() {
+    async loadLocationsList(): Promise<void> {
       const data = localStorage.getItem('locations');
       try {
         if (data) {
@@ -60,7 +61,7 @@ export default {
   mounted() {
     this.loadLocationsList();
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

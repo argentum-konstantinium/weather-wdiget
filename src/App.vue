@@ -4,18 +4,18 @@
   </div>
 </template>
 
-<script>
-
-import store from './store/index';
+<script lang="ts">
+import Vue from 'vue';
 import Widget from '@/components/Widget.vue';
+import store from '@/store/index';
 
-export default {
+export default Vue.extend({
   name: 'App',
   store,
   components: {
     Widget,
   },
-};
+});
 </script>
 
 <style lang="scss">
